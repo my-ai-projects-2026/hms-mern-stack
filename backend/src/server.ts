@@ -44,27 +44,16 @@ if (process.env.NODE_ENV === 'development') {
    app.use(morgan("dev"));
 }
 
-//end middleware
 
-app.get("/", (req: Request, res: Response) => {
-   res.send("Hello Arnold World!!!");
-});
-
-app.get("/api/me", async (req, res) => {
-   const session = await auth.api.getSession({
-      headers: fromNodeHeaders(req.headers),
-   });
-   console.log("This is a session");
-   return res.json(session);
-});
-
-app.use("/api/users", userRouter);
-app.use("/api/activities", activityRouter);
-
-app.all("/api/auth/*splat", toNodeHandler(auth));
 // Error handling middlewares must be AFTER all routes
 app.use(notFoundHandler);
 app.use(globalErrorHandler);
+//end middleware
+
+
+app.all("/api/auth/*splat", toNodeHandler(auth));
+app.use("/api/users", userRouter);
+app.use("/api/activities", activityRouter);
 
 
 connectDb().then(() => {
