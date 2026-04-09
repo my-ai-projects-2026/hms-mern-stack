@@ -45,3 +45,4 @@ This project is built using a modern variant of the **MERN (MongoDB, Express, Re
 4. **Backend Error Handling**: Use the existing `ApiError` utility and global error handlers. Ensure the global error handlers are always mounted at the very bottom of the Express routing stack.
 5. **Formatting**: Rely on Biome for linting and formatting within the `clients` directory.
 6. **Code Modification**: Always ask the user for permission before modifying the codebase.
+7. **Design Theme**: Follow the "Hospital Light" theme defined in `styles.css`. Use oceanic/medical colors like sea-ink (`#173a40`), lagoon (`#4fb8b2`), palm green, and clean white/soft sand backgrounds. UIs should be visually premium, employing glassmorphism (`.island-shell`), soft shadows, rounded borders (`rounded-2xl`, `rounded-xl`), and micro-animations (`.rise-in`, hover transitions). Avoid generic designs; prioritize dynamic, calming, and state-of-the-art aesthetics that wow the user.
